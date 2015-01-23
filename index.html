@@ -3,10 +3,9 @@
 <head>
 	<title>Islam and violence</title>
 	<link rel="stylesheet" href="blue/style.css" type="text/css" media="print, projection, screen">
-	<link rel="stylesheet" href="litetabs.css" type="text/css" media="print, projection, screen">
 	<style>
-		body {
-			background-color: #EEEEEE;
+		#CSVmap {
+
 		}
 		div#container {
 			width: 100%;
@@ -21,23 +20,24 @@
 		}
 	</style>
 
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
 	<script src="jquery-latest.js"></script>
-	<script src="rainbowvis.js"></script>
 	<script src="jquery.csvToTable.js"></script>
 	<script src="jquery.tablesorter.min.js"></script>
-	<script src="litetabs.jquery.js"></script>
+	<script src="d3.min.js"></script>
+	<script src="topojson.min.js"></script>
+	<script src="datamaps.world.min.js"></script>
+	<script src="rainbowvis.js"></script>
 </head>
 <body>
 <h1>Islam and violence</h2>
 <div id="container">
 	<ul>
-        <li><a href="#map">Map View</a></li>
-        <li><a href="#tbl">Table View</a></li>
+        <li><a id="maplink" href="#">Map View</a></li>
+        <li><a id="tbllink" href="#">Table View</a></li>
     </ul>
 
-	<div name="#map" id="CSVmap">What is this whatever it is lorem impsum</div>
 	<div name="#tbl" id="CSVTable"></div>
+	<div name="#map" id="CSVmap" style="width: 800px; height: 600px;"></div>
 </div>
 
 <script src="js.js"></script>
