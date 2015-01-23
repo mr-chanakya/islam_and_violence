@@ -11,10 +11,13 @@ It would be inappropriate for *me* to answer that question directly with a yes o
 
 I have created a page for you to [explore](http://mr-chanakya.github.io/islam_and_violence/) the above two data sources and reach your own conclusions.
 
-# libraries and plugins
+# Libraries and plugins
 + jquerycsvtotable: https://code.google.com/p/jquerycsvtotable/
 + tablesorter: http://tablesorter.com/docs/
 + rainbowvis-js: https://github.com/anomal/RainbowVis-JS
++ d3.js: http://d3js.org/
++ topojson: https://github.com/mbostock/topojson
++ datamaps: http://datamaps.github.io/
 
 # Data sources
 
