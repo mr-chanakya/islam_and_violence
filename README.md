@@ -1,6 +1,6 @@
 # Is there a connection between Islam and violence?
 
-[Explore](mr-chanakya.github.io/islam_and_violence) the data visually to find it for yourself.
+[Explore](http://mr-chanakya.github.io/islam_and_violence/) the data visually to find out for yourself.
 
 # Details
 
@@ -9,7 +9,7 @@ It would be inappropriate for *me* to answer that question directly with a yes o
 1. Muslim Population Percentage per country (source: Pew Research Center)
 2. Global Peace Ranking per country 
 
-By exploring the data draw your own conclusions!
+I have created a page for you to [explore](http://mr-chanakya.github.io/islam_and_violence/) the above two data sources and reach your own conclusions.
 
 # libraries and plugins
 + jquerycsvtotable: https://code.google.com/p/jquerycsvtotable/
