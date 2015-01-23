@@ -18,7 +18,7 @@ $(document).ready(function() {
 	    		.addClass("tablesorter")
 	    		.attr("id", "myTable")
 	    		.tablesorter({sortList: [[2,1]]});
-	    	$('#CSVTable').hide();
+	    	//$('#CSVTable').hide();
 	    	// data loaded, time to create the map
 	    	createMap();
 		}
@@ -79,7 +79,7 @@ $(document).ready(function() {
 		// -------* start drawing interactive map *---- 
 
         // using the newly created map state objects, draw the interactive map
-	    var map = new Datamap({
+	    map = new Datamap({
 	        scope: 'world',
 	        element: document.getElementById('CSVmap'),
 	        projection: 'mercator',
@@ -106,25 +106,53 @@ $(document).ready(function() {
 							'</strong><br/>Data unavailable!</div>'].join('');
 					}
 				}
-			}
+			},
+
+			done: function(datamap) {
+        		datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
+            	//alert(geography.properties.name);
+            	console.log(geography);
+        	});}
 		});
 		// -------* end drawing interactive map *---- 
 
 
 		// -------* start building UI *---- 
 
-		// enable tabs
-		$("#CSVmap").show();
+		$("#header").show("slow");
 
-		$("#maplink").click(function() {
-			$("#CSVmap").show()	;
-			$("#CSVTable").hide();
-		});
+		var last_country_code = null;
+		var last_country_color = null;
+		var highlight_color = "#000000"
 
-		$("#tbllink").click(function() {
-			$("#CSVmap").hide();
-			$("#CSVTable").show();
+		$("#myTable td").hover(function(){
+			var country = $(this).parent().find('td').eq(0).text()
+			var code = country_to_code[country];
+
+			console.log(code);
+
+			var obj = {};
+			// clear last country's highlight, if any
+			if(last_country_code) {
+				obj[last_country_code] = last_country_color;
+				map.updateChoropleth(obj);
+			}
+
+			// take a backup of name and color before changing
+			last_country_code = code;
+			last_country_color = data_obj[code];
+
+			// highlight the selected country
+			obj = {};
+			//if(last_country_code) obj[last_country_code] =  last_country_color;
+
+			obj[code] = highlight_color;
+			map.updateChoropleth(obj);
+
 		});
+		$("CSVmap").hover(function() {
+			map.updateChoropleth(data_obj);
+		})
 		// -------* end building UI *---- 
 
 	}

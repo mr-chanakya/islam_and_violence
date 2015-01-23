@@ -3,21 +3,8 @@
 <head>
 	<title>Islam and violence</title>
 	<link rel="stylesheet" href="blue/style.css" type="text/css" media="print, projection, screen">
+	<link rel="stylesheet" href="style.css" type="text/css" media="print, projection, screen">
 	<style>
-		#CSVmap {
-
-		}
-		div#container {
-			width: 100%;
-		}
-		#myTable {
-			width: auto;
-			padding:0;
-			margin: 0;
-		}
-		#myTable th{
-			padding-right:35px;
-		}
 	</style>
 
 	<script src="jquery.min.js"></script>
@@ -29,15 +16,11 @@
 	<script src="rainbowvis.js"></script>
 </head>
 <body>
-<h1>Islam and violence</h2>
 <div id="container">
-	<ul>
-        <li><a id="maplink" href="#">Map View</a></li>
-        <li><a id="tbllink" href="#">Table View</a></li>
-    </ul>
+	<h1 id="header">Islam and violence</h2>
 
-	<div name="#tbl" id="CSVTable"></div>
-	<div name="#map" id="CSVmap" style="width: 800px; height: 600px;"></div>
+	<div id="CSVTable"></div>
+	<div id="CSVmap" style="width: 800px; height: 600px;"></div>
 </div>
 
 <script src="js.js"></script>
